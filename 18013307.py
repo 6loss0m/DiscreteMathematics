@@ -16,14 +16,11 @@ def pos(k):
     return True
 def out1(k):
     global total
-    # 가능하면 결과값 +1
     if k == queen:
         total += 1
     else:
-        # 각 열마다 0 ~ N-1 행에 퀸을 배치
         for i in range(queen):
             arr1[k] = i
-            # 가능한 경우 진행
             if pos(k):
                 out1(k+1)
 out1(0)
@@ -41,7 +38,6 @@ def print_result(result):
 def out2(n):
     global total
     if len(arr2) == queen:
-        #total = total + 1
         print_result(arr2)
         return
     for i in range(queen):
